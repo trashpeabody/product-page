@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <nav class="container">
+    <div class="nav-container-left">
+      <a href="/" target="_blank">
+        <img src="../images/logo.svg" alt="sneaker logo" srcset="">
+      </a>
+      <ul>
+        <li><a href="/" target="_blank">Collections</a></li>
+        <li><a href="/" target="_blank">Men</a></li>
+        <li><a href="/" target="_blank">Women</a></li>
+        <li><a href="/" target="_blank">About</a></li>
+        <li><a href="/" target="_blank">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-container-right">
+      <a href="/" target="_blank">
+        <img class="cart-logo" src="../images/icon-cart.svg" alt="cart" srcset="">
+      </a>
+      <a href="/" target="_blank">
+        <img class="avatar" src="../images/image-avatar.png" alt="profile picture" srcset="">
+      </a>
+    </div>
+    
+  </nav>
+
+  <main class="container">
+
+    <div class="product-image-container">
+      <img class="main-image" src="../images/image-product-1.jpg" alt="Product main image" srcset="">
+      <div class="thumbnails-container">
+        <img class="thumbnail" src="../images/image-product-1-thumbnail.jpg" alt="Product image thumbnail" srcset="">
+        <img class="thumbnail" src="../images/image-product-2-thumbnail.jpg" alt="Product image thumbnail" srcset="">
+        <img class="thumbnail" src="../images/image-product-3-thumbnail.jpg" alt="Product image thumbnail" srcset="">
+        <img class="thumbnail" src="../images/image-product-4-thumbnail.jpg" alt="Product image thumbnail" srcset="">
+      </div>
+    </div>
+
+    <div class="product-info-container">
+      <span class="overtitle">Sneaker Company</span>
+      <h1 class="product-name">Fall Limited Edition Sneakers</h1>
+      <p class="product-description">These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="price-container">
+        <h2 class="price">$125.00</h2> <span class="discount">50%</span>
+      </div>
+      <h3 class="previous-price">$250.00</h3>
+      <form>
+        <fieldset class="quantity">
+          <button class="minus" type="button">-</button>
+          <input type="text" name="quantity" value="1" />
+          <button class="plus" type="button">+</button>
+        </fieldset>
+        <input class="add" type="button" value="Add to cart">
+      </form>
+    </div>
+
+  </main>
+
+</body>
+</html>
