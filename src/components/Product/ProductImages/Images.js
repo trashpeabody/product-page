@@ -40,7 +40,10 @@ const Images = ({ isLightBox }) => {
     },
   ]
 
+  let images = [Image1, Image2, Image3, Image4]
+
   const [thumbnails, setThumbnails] = useState (initialThumbnails)
+  const [image, setImage] = useState (Image1)
 
   const handleClick = (index) => {
     return () => {
@@ -51,12 +54,13 @@ const Images = ({ isLightBox }) => {
             : {...thumb, isSelected: false}
         )
       )
+      setImage (images[index])
     }
   }
 
   return (
     <>
-      <img id="main-image-out" className="main-image" src={Image1} alt="Product main image" />
+      <img id="main-image-out" className="main-image" src={image} alt="Product main image" />
       <div className="thumbnails-container">
         {thumbnails.map (thumbnail => 
           <Thumbnail key={thumbnail.index} handleClick={handleClick(thumbnail.index)} thumbnail={thumbnail} />
