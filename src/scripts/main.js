@@ -1,19 +1,3 @@
-const quantity = document.querySelector(".quantity-value")
-
-let minusClick = document.querySelector(".minus").addEventListener('click', 
-  () => {
-    quantity.value === '0'
-    ? null
-    : quantity.value--
-  }
-)
-
-let plusClick = document.querySelector(".plus").addEventListener('click', 
-  () => {
-    quantity.value++
-  }
-)
-
 let mainImage = document.querySelector('.main-image')
 let thumbnailsArray = Array.from(document.querySelectorAll('.thumbnail'))
 let lastSelected = thumbnailsArray[0]

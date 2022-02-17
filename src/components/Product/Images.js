@@ -9,16 +9,16 @@ import Thumb4 from '../../images/image-product-4-thumbnail.jpg'
 
 const Images = () => {
   return (
-    <div className="product-image-container">
-      <img id="main-image-out" className="main-image" src={Image1} alt="Product main image" srcset="" />
+    <>
+      <img id="main-image-out" className="main-image" src={Image1} alt="Product main image" />
       <div className="thumbnails-container">
-        <div className="selected thumbnail"><img src={Thumb1} alt="Product image thumbnail" srcset="" /></div>
-        <div className="thumbnail"><img src={Thumb2} alt="Product image thumbnail" srcset="" /></div>
-        <div className="thumbnail"><img src={Thumb3} alt="Product image thumbnail" srcset="" /></div>
-        <div className="thumbnail"><img src={Thumb4} alt="Product image thumbnail" srcset="" /></div>
+        <div className="selected thumbnail"><img src={Thumb1} alt="Product image thumbnail" /></div>
+        <div className="thumbnail"><img src={Thumb2} alt="Product image thumbnail" /></div>
+        <div className="thumbnail"><img src={Thumb3} alt="Product image thumbnail" /></div>
+        <div className="thumbnail"><img src={Thumb4} alt="Product image thumbnail" /></div>
       </div>
-    </div>
+    </>
   )
 }
 
-export default Images;
+export default Images
