@@ -1,10 +1,11 @@
-import Logo from '../images/logo.svg'
-import Cart from '../images/icon-cart.svg'
-import Avatar from '../images/image-avatar.png'
+import Logo from './assets/logo.svg'
+import Cart from './assets/icon-cart.svg'
+import Avatar from './assets/image-avatar.png'
+import './styles/Main.css'
 
 const NavBar = () => {
   return (
-    <nav className="container">
+    <nav className="nav-container container">
       <div className="nav-container-left">
         <a href="/" target="_blank">
           <img src={Logo} alt="sneaker logo" />

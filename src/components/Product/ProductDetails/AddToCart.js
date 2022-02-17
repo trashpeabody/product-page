@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Button from './Button'
-import Plus from '../../images/icon-plus.svg'
-import Minus from '../../images/icon-minus.svg'
+import Plus from './assets/icon-plus.svg'
+import Minus from './assets/icon-minus.svg'
+import './styles/AddToCart.css'
 
 const AddToCart = () => {
 
@@ -17,7 +18,7 @@ const AddToCart = () => {
     return () => setQuantity (finalQuantity)
   }
   return (
-    <form>
+    <form className="add-to-cart">
         <fieldset className="quantity">
           <Button handleClick={handleClick(false)} src={Minus} />
           <input className="quantity-value" type="text" name="quantity" value={quantity} />

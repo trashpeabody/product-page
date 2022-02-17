@@ -1,4 +1,5 @@
 import Images from './Images'
+import './styles/ProductImage.css'
 
 const ProductImage = () => {
   return (

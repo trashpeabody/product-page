@@ -1,5 +1,6 @@
 import Details from './Details'
 import AddToCart from './AddToCart'
+import './styles/Info.css'
 
 const Info = ({ product }) => {
 

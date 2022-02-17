@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/Main'
 import Product from './components/Product/Main'
 
 const App = () => {

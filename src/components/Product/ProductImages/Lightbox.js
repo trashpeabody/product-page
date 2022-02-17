@@ -1,4 +1,5 @@
 import Images from "./Images"
+import './styles/Lightbox.css'
 
 const Lightbox = () => {
 

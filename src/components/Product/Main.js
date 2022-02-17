@@ -1,6 +1,7 @@
-import ProductImage from './ProductImage'
-import Info from './Info'
-import Lightbox from './Lightbox'
+import ProductImage from './ProductImages/ProductImage'
+import Info from './ProductDetails/Info'
+import Lightbox from './ProductImages/Lightbox'
+import './styles/Main.css'
 
 const product = {
   name: 'Fall Limited Edition Sneakers',
@@ -13,7 +14,7 @@ const product = {
 
 const Main = () => {
   return (
-    <main className="container">
+    <main className="main-container container">
       <ProductImage />
       <Info product={product} />
       <Lightbox />
