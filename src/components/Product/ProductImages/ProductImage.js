@@ -4,7 +4,7 @@ import './styles/ProductImage.css'
 const ProductImage = () => {
   return (
     <div className="product-image-container">
-      <Images />
+      <Images isLightBox={false} />
     </div>
   )
 }

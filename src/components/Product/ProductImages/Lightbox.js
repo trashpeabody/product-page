@@ -5,7 +5,7 @@ const Lightbox = () => {
 
   return (
     <div className="lightbox">
-      <Images />
+      <Images isLightBox={true} />
     </div>
   )
 }
