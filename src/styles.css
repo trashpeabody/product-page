@@ -4,15 +4,15 @@
 */
 
 :root {
-  --primary: hsl(26, 100%, 55%);
-  --primary-pale: hsl(25, 100%, 94%);
-  --very-dark-blue: hsl(220, 13%, 13%);
-  --dark-grayish-blue: hsl(219, 9%, 45%);
-  --grayish-blue: hsl(220, 14%, 75%);
-  --light-grayish-blue: hsl(223, 64%, 98%);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
-  --light-background: hsl(0, 0%, 25%);
+  --primary: hsl(26deg 100% 55%);
+  --primary-pale: hsl(25deg 100% 94%);
+  --very-dark-blue: hsl(220deg 13% 13%);
+  --dark-grayish-blue: hsl(219deg 9% 45%);
+  --grayish-blue: hsl(220deg 14% 75%);
+  --light-grayish-blue: hsl(223deg 64% 98%);
+  --white: hsl(0deg 0% 100%);
+  --black: hsl(0deg 0% 0%);
+  --light-background: hsl(0deg 0% 25%);
   --par: 1rem;
 }
 
@@ -101,9 +101,9 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -118,31 +118,37 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
   background-color: var(--white);
   color: var(--very-dark-blue);
   font-family: "Kumbh Sans", sans-serif;
 }
+
 button,
 input {
   font-family: "Kumbh Sans", sans-serif;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

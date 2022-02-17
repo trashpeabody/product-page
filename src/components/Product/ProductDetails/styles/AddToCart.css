@@ -28,5 +28,5 @@
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0px 40px 15px -10px var(--primary-pale);
+  box-shadow: 0 40px 15px -10px var(--primary-pale);
 }
