@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react'
 import Image1 from '../assets/image-product-1.jpg'
 import Image2 from '../assets/image-product-2.jpg'
 import Image3 from '../assets/image-product-3.jpg'
@@ -10,7 +10,7 @@ import Thumb4 from '../assets/image-product-4-thumbnail.jpg'
 
 const Context = createContext({})
 
-let initialThumbnails = [
+const initialThumbnails = [
   {
     index: 0,
     isSelected: true,
@@ -34,16 +34,18 @@ let initialThumbnails = [
     isSelected: false,
     src: Thumb4,
     mainSrc: Image4
-  },
+  }
 ]
 
-export const ImageSrcProvider = ({children}) => {
+export const ImageSrcProvider = ({ children }) => {
   const [image, setImage] = useState(Image1)
-  const [thumbnails, setThumbnails] = useState (initialThumbnails)
+  const [thumbnails, setThumbnails] = useState(initialThumbnails)
 
-  return <Context.Provider value={{image, setImage, thumbnails, setThumbnails}}>
-    {children}
-  </Context.Provider>
+  return (
+    <Context.Provider value={{ image, setImage, thumbnails, setThumbnails }}>
+      {children}
+    </Context.Provider>
+  )
 }
 
 export default Context
