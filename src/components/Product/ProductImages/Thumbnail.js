@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import Filter from './Filter'
+import Thumb from './Thumb'
+import './styles/Thumbnail.css'
 
 const Thumbnail = ({ thumbnail, handleClick }) => {
   const classValue = thumbnail.isSelected
@@ -18,8 +19,7 @@ const Thumbnail = ({ thumbnail, handleClick }) => {
 
   return (
     <div onClick={handleClick} onMouseEnter={handleHoverIn} onMouseLeave={handleHoverOut} className={classValue}>
-      <Filter isHover={isHover} />
-      <img src={thumbnail.src} alt='Product image thumbnail' />
+      <Thumb isHover={isHover} src={thumbnail.src} />
     </div>
   )
 }

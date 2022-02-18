@@ -1,4 +1,5 @@
 import Logo from './assets/logo.svg'
+import './styles/Navigation.css'
 
 const Navigation = () => {
   return (

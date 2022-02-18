@@ -1,7 +1,8 @@
 import Navigation from './Navigation'
-import Cart from '../../assets/icon-cart.svg'
+import Cart from './Cart'
 import Avatar from './assets/image-avatar.png'
 import './styles/Main.css'
+import OpenedCart from './OpenedCart'
 
 const NavBar = () => {
   return (
@@ -9,14 +10,12 @@ const NavBar = () => {
       <Navigation />
 
       <div className='nav-container-right'>
-        <a href='/' target='_blank'>
-          <Cart width='22' height='20' />
-        </a>
+        <Cart />
         <a href='/' target='_blank'>
           <img className='avatar' src={Avatar} alt='profile picture' />
         </a>
+        <OpenedCart />
       </div>
-
     </nav>
   )
 }
