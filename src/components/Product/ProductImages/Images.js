@@ -38,7 +38,7 @@ const Images = ({ isLightBox }) => {
           ? (
             <div className='lightbox-container'>
               <img id='main-image-lightbox' className='main-image' src={context.image} onClick={handleMainClick} alt='Product main image' />
-              <span><img className='close' src={Close} onClick={handleCloseClick} alt='Close button' /></span>
+              <span><Close onClick={handleCloseClick} width='30' height='30' viewBox='0 0 15 15' /></span>
               <div className='thumbnails-container'>
                 {context.thumbnails.map(thumbnail =>
                   <Thumbnail key={thumbnail.index} handleClick={handleClick(thumbnail.index)} thumbnail={thumbnail} />

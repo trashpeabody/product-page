@@ -4,7 +4,7 @@ const Navigation = () => {
   return (
     <div className='nav-container-left'>
       <a href='/' target='_blank'>
-        <img src={Logo} alt='sneaker logo' />
+        <Logo width='140' height='20' />
       </a>
       <ul>
         <li><a href='/' target='_blank'>Collections</a></li>

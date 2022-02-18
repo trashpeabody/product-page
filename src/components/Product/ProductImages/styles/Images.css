@@ -14,6 +14,7 @@
 }
 
 .thumbnail {
+  position: relative;
   width: 90px;
   height: 90px;
   border-radius: 12px;
@@ -25,10 +26,6 @@
   border: 3px solid var(--primary);
 }
 
-.selected img {
-  opacity: 0.5;
-}
-
 .thumbnail img {
   width: 100%;
   height: 100%;
@@ -36,6 +33,7 @@
 
 .lightbox .lightbox-container {
   position: relative;
+  z-index: 2;
 }
 
 .lightbox .lightbox-container .thumbnail {
@@ -50,14 +48,13 @@
 
 .lightbox span {
   position: absolute;
-  top: -30px;
-  right: -30px;
+  top: -50px;
+  right: -60px;
+  cursor: pointer;
 }
 
-.lightbox span img {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
+.lightbox svg path:hover, .lightbox svg path:focus {
+  fill: var(--primary);
 }
 
 #main-image-out {

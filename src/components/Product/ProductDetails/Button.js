@@ -1,9 +1,9 @@
 import './styles/Button.css'
 
-const Button = ({ handleClick, src }) => {
+const Button = ({ handleClick, children }) => {
   return (
     <button className='change-quantiy' type='button' onClick={handleClick}>
-      <img src={src} alt='Button for changing product quantity' />
+      {children}
     </button>
   )
 }

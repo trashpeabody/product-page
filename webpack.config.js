@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const path = require ('path')
+const path = require('path')
 
 const jsRules = {
   test: /\.js$/,
@@ -26,8 +26,14 @@ const styleRules = {
 }
 
 const imageRules = {
-  test: /\.(png|svg|jpg|jpeg|gif)$/i,
-  type: 'asset/resource',
+  test: /\.(png|jpg|jpeg|gif)$/i,
+  type: 'asset/resource'
+}
+
+const svgRules = {
+  test: /\.svg$/i,
+  issuer: /\.[jt]sx?$/,
+  use: [{ loader: '@svgr/webpack', options: { icon: true } }]
 }
 
 module.exports = {
@@ -37,13 +43,13 @@ module.exports = {
     path: path.resolve(__dirname, 'build/')
   },
   module: {
-    rules: [jsRules, styleRules, imageRules]
+    rules: [jsRules, styleRules, imageRules, svgRules]
   },
   plugins: [
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
     new FaviconsWebpackPlugin('src/assets/favicon-32x32.png')
   ],
   devServer: {
-    open: true,
+    open: true
   }
 }
