@@ -33,7 +33,24 @@ const Images = ({ isLightBox }) => {
   }
 
   const handleNav = (isPrev) => {
-    return () => console.log(isPrev, 'Nav')
+    return () => {
+      let index = context.thumbnails.findIndex((thumb) => thumb.isSelected === true)
+      isPrev
+        ? index === 0
+            ? index = context.thumbnails.length - 1
+            : index = index - 1
+        : index === 3
+          ? index = 0
+          : index = index + 1
+      context.setThumbnails(
+        context.thumbnails.map(
+          thumb => thumb.index === index
+            ? { ...thumb, isSelected: true }
+            : { ...thumb, isSelected: false }
+        )
+      )
+      context.setImage(context.thumbnails[index].mainSrc)
+    }
   }
 
   const handleHoverIn = (isPrev) => {
@@ -65,12 +82,12 @@ const Images = ({ isLightBox }) => {
               <img id='main-image-lightbox' className='main-image' src={context.image} onClick={handleMainClick} alt='Product main image' />
               <Close className='close' onClick={handleCloseClick} width='30' height='30' viewBox='0 0 15 15' />
 
-              <span className='arrow prev' onMouseEnter={handleHoverIn(true)} onMouseLeave={handleHoverOut(true)}>
-                <Prev onClick={handleNav(true)} width='12' height='18' />
+              <span className='arrow prev' onMouseEnter={handleHoverIn(true)} onMouseLeave={handleHoverOut(true)} onClick={handleNav(true)}>
+                <Prev width='12' height='18' />
               </span>
 
-              <span className='arrow next' onMouseEnter={handleHoverIn(false)} onMouseLeave={handleHoverOut(false)}>
-                <Next onClick={handleNav(false)} width='13' height='18' />
+              <span className='arrow next' onMouseEnter={handleHoverIn(false)} onMouseLeave={handleHoverOut(false)} onClick={handleNav(false)}>
+                <Next width='13' height='18' />
               </span>
 
               <div className='thumbnails-container'>
