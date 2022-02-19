@@ -28,15 +28,46 @@
   height: 550px;
 }
 
-.lightbox span {
-  position: absolute;
-  top: -50px;
-  right: -60px;
+.lightbox svg {
   cursor: pointer;
 }
 
-.lightbox svg path:hover, .lightbox svg path:focus {
+.close {
+  position: absolute;
+  top: -50px;
+  right: -20px;
+}
+
+.close path:hover, .close path:focus {
   fill: var(--primary);
+}
+
+.arrow {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  top: 275px;
+  cursor: pointer;
+}
+
+.arrow svg path:hover, .arrow svg path:focus {
+  stroke: var(--primary);
+}
+
+.prev {
+  left: -25px;
+}
+
+.prev svg {
+  margin-right: 2px;
+}
+
+.next {
+  right: -25px;
 }
 
 #main-image-out {

@@ -3,10 +3,10 @@ import Product from './components/Product/Main'
 
 const App = () => {
   return (
-  <>
-    <NavBar />
-    <Product />
-  </>
+    <>
+      <NavBar />
+      <Product />
+    </>
   )
 }
 

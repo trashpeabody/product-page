@@ -6,7 +6,7 @@
 :root {
   --primary: rgb(255 125 26);
   --primary-pale: hsl(25deg 100% 94%);
-  --very-dark-blue: hsl(220deg 13% 13%);
+  --very-dark-blue: #1d2025;
   --dark-grayish-blue: hsl(219deg 9% 45%);
   --grayish-blue: hsl(220deg 14% 75%);
   --light-grayish-blue: hsl(223deg 64% 98%);
