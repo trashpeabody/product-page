@@ -1,11 +1,14 @@
-import './styles/Button.css'
+const Button = ({ className, handleClick, type, children }) => {
+  const onMouseEnter = (event) => {
+    event.target.classList.add('filter')
+  }
 
-const Button = ({ handleClick, onMouseEnter, onMouseLeave, isHover, children }) => {
-  const classValue = isHover
-    ? 'change-quantiy filter'
-    : 'change-quantiy'
+  const onMouseLeave = (event) => {
+    event.target.classList.remove('filter')
+  }
+
   return (
-    <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={classValue} type='button' onClick={handleClick}>
+    <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={className} type={type} onClick={handleClick}>
       {children}
     </button>
   )

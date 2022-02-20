@@ -23,6 +23,10 @@
   padding: 0 24px;
 }
 
+.empty {
+  min-height: 188px;
+}
+
 .cart-item {
   display: flex;
   flex-direction: row;

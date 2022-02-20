@@ -1,7 +1,6 @@
-import ProductImage from './ProductImages/ProductImage'
 import Info from './ProductDetails/Info'
-import Lightbox from './ProductImages/Lightbox'
-import { ImageSrcProvider } from './ProductImages/context/ImageContext'
+import ImageContainer from './ProductImages/ImageContainer'
+import { ImageSrcProvider } from '../../context/ImageContext'
 import './styles/Main.css'
 
 const product = {
@@ -13,16 +12,16 @@ const product = {
   prevPrice: '$250.00'
 }
 
-const Main = () => {
+const MainContainer = () => {
   return (
     <main className='main-container container'>
       <ImageSrcProvider>
-        <ProductImage />
+        <ImageContainer isLightBox={false} />
         <Info product={product} />
-        <Lightbox />
+        <ImageContainer isLightBox />
       </ImageSrcProvider>
     </main>
   )
 }
 
-export default Main
+export default MainContainer
