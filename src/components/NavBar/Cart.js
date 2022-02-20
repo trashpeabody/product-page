@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import CartIcon from '../../assets/icon-cart.svg'
+import CartContext from '../../context/CartContext'
 import './styles/Cart.css'
 
 const Cart = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const { cartOpened, setCartOpened } = useContext(CartContext)
 
   const handleOpenCart = () => {
     const openedCart = document.querySelector('.opened-cart')
-    isOpen
+    cartOpened
       ? openedCart.style.display = 'none'
       : openedCart.style.display = 'block'
-    setIsOpen(!isOpen)
+    setCartOpened(!cartOpened)
   }
 
   return (
