@@ -1,9 +1,8 @@
 import { useState, useContext } from 'react'
 import Button from './Button'
-import Cart from '../../../assets/icon-cart.svg'
-import './styles/AddToCart.css'
+import Cart from '../../../../assets/icon-cart.svg'
 import QuantityFieldSet from './QuantityFieldSet'
-import CartContext from '../../../context/CartContext'
+import CartContext from '../../../../context/CartContext'
 
 const AddToCart = () => {
   const [quantity, setQuantity] = useState(1)

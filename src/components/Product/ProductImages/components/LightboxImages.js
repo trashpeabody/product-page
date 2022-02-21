@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import Context from '../../../context/ImageContext'
+import Context from '../../../../context/ImageContext'
 import ThumbnailContainer from './ThumbnailContainer'
-import Close from './assets/icon-close.svg'
-import Prev from './assets/icon-previous.svg'
-import Next from './assets/icon-next.svg'
-import { handleMainClick, handleHoverIn, handleHoverOut, handleCloseClick, handleNav } from './handlers/Images'
+import Close from '../assets/icon-close.svg'
+import Prev from '../assets/icon-previous.svg'
+import Next from '../assets/icon-next.svg'
+import { handleMainClick, handleHoverIn, handleHoverOut, handleCloseClick, handleNav } from '../handlers/Images'
 
 const LightboxImages = () => {
   const { thumbnails, setThumbnails, image, setImage } = useContext(Context)

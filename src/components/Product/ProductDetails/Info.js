@@ -1,6 +1,5 @@
-import Details from './Details'
-import AddToCart from './AddToCart'
-import './styles/Info.css'
+import Details from './components/Details'
+import AddToCart from './components/AddToCart'
 
 const Info = ({ product }) => {
   return (

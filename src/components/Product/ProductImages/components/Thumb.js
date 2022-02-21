@@ -1,5 +1,3 @@
-import './styles/Thumb.css'
-
 const Thumb = ({ isHover, src }) => {
   const classValue = isHover
     ? 'thumb filter'

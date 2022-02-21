@@ -1,8 +1,7 @@
-import Navigation from './Navigation'
-import Cart from './Cart'
+import Navigation from './components/Navigation'
+import Cart from './components/Cart'
 import Avatar from './assets/image-avatar.png'
-import './styles/Main.css'
-import OpenedCart from './OpenedCart'
+import OpenedCart from './components/OpenedCart'
 
 const NavBar = () => {
   return (

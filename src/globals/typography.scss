@@ -1,4 +1,4 @@
-@use '../util' as *;
+@use "../util" as *;
 
 h1,
 h2,
@@ -7,13 +7,12 @@ h3 {
   line-height: 1.1;
 }
 
-h1 {
-  font-size: rem(36);
-  letter-spacing: rem(2);
-}
-
 a,
 a:visited,
 a:active {
   text-decoration: none;
+}
+
+a {
+  cursor: pointer;
 }

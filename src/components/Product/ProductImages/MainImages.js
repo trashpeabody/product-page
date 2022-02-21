@@ -1,8 +1,7 @@
 import { useContext } from 'react'
-import ThumbnailContainer from './ThumbnailContainer'
+import ThumbnailContainer from './components/ThumbnailContainer'
 import Context from '../../../context/ImageContext'
 import { handleMainClick } from './handlers/Images'
-import './styles/Images.css'
 
 const MainImages = () => {
   const { thumbnails, setThumbnails, image, setImage } = useContext(Context)

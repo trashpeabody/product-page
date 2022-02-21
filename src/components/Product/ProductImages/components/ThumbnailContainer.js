@@ -1,5 +1,5 @@
 import Thumbnail from './Thumbnail'
-import { handleClick } from './handlers/Images'
+import { handleClick } from '../handlers/Images'
 
 const ThumbnailContainer = ({ thumbnails, setThumbnails, setImage }) => {
   return (

@@ -1,8 +1,6 @@
-import Context from '../../context/CartContext'
-import './styles/OpenedCart.css'
+import Context from '../../../context/CartContext'
 import { useContext } from 'react'
 import CartItem from './CartItem'
-import Checkout from './Checkout'
 
 const OpenedCart = () => {
   const { products } = useContext(Context)
@@ -19,7 +17,7 @@ const OpenedCart = () => {
           {products.map(product =>
             <CartItem key={product.index} product={product} />
           )}
-          <Checkout />
+          <a className='checkout'>Checkout</a>
           {/* eslint-disable-next-line react/jsx-closing-tag-location */}
         </div>}
     </div>

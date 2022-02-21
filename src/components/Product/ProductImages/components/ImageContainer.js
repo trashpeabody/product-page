@@ -1,7 +1,6 @@
 
 import LightboxImages from './LightboxImages'
-import MainImages from './MainImages'
-import './styles/ImageContainer.css'
+import MainImages from '../MainImages'
 
 const ImageContainer = ({ isLightBox }) => {
   const classValue = isLightBox

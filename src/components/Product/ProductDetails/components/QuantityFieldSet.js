@@ -1,7 +1,6 @@
 import Button from './Button'
-import Plus from './assets/icon-plus.svg'
-import Minus from './assets/icon-minus.svg'
-import './styles/QuantityFieldSet.css'
+import Plus from '../assets/icon-plus.svg'
+import Minus from '../assets/icon-minus.svg'
 
 const QuantityFieldSet = ({ quantity, setQuantity }) => {
   const handleClick = (isPlus) => {

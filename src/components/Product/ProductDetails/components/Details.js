@@ -1,5 +1,3 @@
-import './styles/Details.css'
-
 const Details = ({ product }) => {
   return (
     <>

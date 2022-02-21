@@ -1,7 +1,6 @@
 import Info from './ProductDetails/Info'
-import ImageContainer from './ProductImages/ImageContainer'
+import ImageContainer from './ProductImages/components/ImageContainer'
 import { ImageSrcProvider } from '../../context/ImageContext'
-import './styles/Main.css'
 
 const product = {
   name: 'Fall Limited Edition Sneakers',

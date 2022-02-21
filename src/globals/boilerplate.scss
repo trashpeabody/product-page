@@ -11,12 +11,10 @@ html {
 }
 
 body {
+  margin: 0 auto;
   line-height: 1;
   background-color: var(--white);
   color: var(--very-dark-blue);
-  font-weight: 400;
-}
-
-p {
   font-size: var(--par);
+  font-weight: 400;
 }

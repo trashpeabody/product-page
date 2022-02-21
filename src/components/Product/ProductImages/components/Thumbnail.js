@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Thumb from './Thumb'
-import './styles/Thumbnail.css'
 
 const Thumbnail = ({ thumbnail, handleClick }) => {
   const classValue = thumbnail.isSelected

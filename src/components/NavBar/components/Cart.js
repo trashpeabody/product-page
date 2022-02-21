@@ -1,7 +1,6 @@
 import { useContext } from 'react'
-import CartIcon from '../../assets/icon-cart.svg'
-import CartContext from '../../context/CartContext'
-import './styles/Cart.css'
+import CartIcon from '../../../assets/icon-cart.svg'
+import CartContext from '../../../context/CartContext'
 
 const Cart = () => {
   const { cartOpened, setCartOpened } = useContext(CartContext)

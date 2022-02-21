@@ -1,9 +1,8 @@
-import TrashIcon from './assets/icon-delete.svg'
-import Thumb from '../Product/ProductImages/assets/image-product-1-thumbnail.jpg'
-import Context from '../../context/CartContext'
+import TrashIcon from '../assets/icon-delete.svg'
+import Thumb from '../../Product/ProductImages/assets/image-product-1-thumbnail.jpg'
+import Context from '../../../context/CartContext'
 import { useContext } from 'react'
-import { productsList } from '../../products'
-import './styles/CartItem.css'
+import { productsList } from '../../../products'
 
 const CartItem = ({ product }) => {
   const displayProduct = productsList.find(element => element.index === product.index)
