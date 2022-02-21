@@ -6,30 +6,24 @@
   padding: 0;
   height: 120px;
   border-bottom: 1px solid var(--grayish-blue);
-}
 
-.container {
-  max-width: 1110px;
-  margin: auto;
-  box-sizing: border-box;
-}
-
-.nav-container-right {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 45px;
-  position: relative;
-  width: 360px;
-  justify-content: flex-end;
+  &-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    position: relative;
+    width: 360px;
+    justify-content: flex-end;
+  }
 }
 
 .avatar {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-}
 
-.avatar:hover {
-  border: 2px solid var(--primary);
+  &:hover {
+    border: 2px solid var(--primary);
+  }
 }

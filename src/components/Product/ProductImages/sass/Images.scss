@@ -13,33 +13,38 @@
   align-items: center;
 }
 
-.lightbox .lightbox-container {
-  position: relative;
-  z-index: 2;
-}
+.lightbox {
+  &-container {
+    position: relative;
+    z-index: 2;
 
-.lightbox .lightbox-container .thumbnail {
-  width: 110px;
-  height: 110px;
-}
+    .thumbnail {
+      width: 110px;
+      height: 110px;
+    }
+  }
 
-.lightbox .main-image {
-  width: 550px;
-  height: 550px;
-}
+  .main-image {
+    width: 550px;
+    height: 550px;
+  }
 
-.lightbox svg {
-  cursor: pointer;
+  svg {
+    cursor: pointer;
+  }
 }
 
 .close {
   position: absolute;
   top: -50px;
   right: -20px;
-}
 
-.close path:hover, .close path:focus {
-  fill: var(--primary);
+  path {
+    &:hover,
+    &:focus {
+      fill: var(--primary);
+    }
+  }
 }
 
 .arrow {
@@ -52,18 +57,21 @@
   height: 56px;
   top: 275px;
   cursor: pointer;
-}
 
-.arrow svg path:hover, .arrow svg path:focus {
-  stroke: var(--primary);
+  svg path {
+    &:hover,
+    &:focus {
+      stroke: var(--primary);
+    }
+  }
 }
 
 .prev {
   left: -25px;
-}
 
-.prev svg {
-  margin-right: 2px;
+  svg {
+    margin-right: 2px;
+  }
 }
 
 .next {

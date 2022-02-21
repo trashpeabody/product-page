@@ -27,15 +27,15 @@
   gap: 20px;
   align-items: center;
   margin-bottom: 12px;
-}
 
-.price-container span {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--primary);
-  background-color: var(--primary-pale);
-  padding: 7px 9px;
-  border-radius: 6px;
+  span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    background-color: var(--primary-pale);
+    padding: 7px 9px;
+    border-radius: 6px;
+  }
 }
 
 .price {

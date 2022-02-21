@@ -18,3 +18,9 @@ body {
   font-size: var(--par);
   font-weight: 400;
 }
+
+.container {
+  max-width: 1110px;
+  margin: auto;
+  box-sizing: border-box;
+}

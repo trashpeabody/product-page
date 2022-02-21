@@ -2,18 +2,18 @@
   display: none;
   position: absolute;
   width: 100%;
-  height:  auto;
+  height: auto;
   top: 80px;
   padding: 28px 0;
   background-color: var(--white);
   z-index: 1;
   border-radius: 12px;
   box-shadow: 0 11px 40px -10px var(--dark-grayish-blue);
-}
 
-.opened-cart h2 {
-  font-weight: 700;
-  padding: 0 0 24px 24px;
+  h2 {
+    font-weight: 700;
+    padding: 0 0 24px 24px;
+  }
 }
 
 .cart-items-container {

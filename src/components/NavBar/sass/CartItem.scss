@@ -4,21 +4,21 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 24px;
-}
 
-.cart-item p {
-  font-weight: 400;
-  color: var(--dark-grayish-blue);
-}
+  p {
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
 
-.cart-item p:first-child {
-  padding-bottom: 8px;
-}
+    &:first-child {
+      padding-bottom: 8px;
+    }
 
-.cart-item p span {
-  font-weight: 700;
-  color: var(--very-dark-blue);
-  padding-left: 12px;
+    span {
+      font-weight: 700;
+      color: var(--very-dark-blue);
+      padding-left: 12px;
+    }
+  }
 }
 
 .cart-thumb {
