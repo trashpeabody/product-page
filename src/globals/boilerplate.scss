@@ -1,0 +1,22 @@
+html {
+  font-size: 100%;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1;
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+  font-weight: 400;
+}
+
+p {
+  font-size: var(--par);
+}
