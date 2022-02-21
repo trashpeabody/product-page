@@ -25,4 +25,7 @@
 
 .empty {
   min-height: 188px;
+  display: grid;
+  place-content: center;
+  font-weight: 700;
 }

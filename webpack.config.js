@@ -25,6 +25,15 @@ const styleRules = {
   ]
 }
 
+const sassRules = {
+  test: /\.s[ac]ss$/i,
+  use: [
+    'style-loader',
+    'css-loader',
+    'sass-loader'
+  ]
+}
+
 const imageRules = {
   test: /\.(png|jpg|jpeg|gif)$/i,
   type: 'asset/resource'
@@ -48,7 +57,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'build/')
     },
     module: {
-      rules: [jsRules, styleRules, imageRules, svgRules]
+      rules: [jsRules, styleRules, sassRules, imageRules, svgRules]
     },
     plugins: [
       new HtmlWebpackPlugin({ template: 'src/index.html' }),
