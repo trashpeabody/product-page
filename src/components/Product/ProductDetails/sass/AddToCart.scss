@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 40% 60%;
   gap: rem(16);
+  z-index: 0;
 
   @include breakpoint-down(medium) {
     grid-template-columns: 1fr;

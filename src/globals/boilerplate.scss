@@ -29,6 +29,10 @@ body {
   @include breakpoint-down(medium) {
     padding: 0 rem(36);
   }
+
+  @include breakpoint-down(small) {
+    padding: 0;
+  }
 }
 
 .pointer {

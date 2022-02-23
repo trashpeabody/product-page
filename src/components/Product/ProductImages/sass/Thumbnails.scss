@@ -11,6 +11,10 @@
     padding-top: rem(20);
   }
 
+  @include breakpoint-down(small) {
+    display: none;
+  }
+
   &__element {
     max-width: rem(90);
     aspect-ratio: 1;

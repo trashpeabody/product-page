@@ -16,8 +16,8 @@ const MainContainer = () => {
     <main className='product-container container'>
       <ImageSrcProvider>
         <ImageContainer isLightBox={false} />
-        <Info product={product} />
         <ImageContainer isLightBox />
+        <Info product={product} />
       </ImageSrcProvider>
     </main>
   )

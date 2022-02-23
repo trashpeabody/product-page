@@ -1,4 +1,4 @@
-@use "../../../util/functions.scss" as *;
+@use "../../../util" as *;
 
 .opened-cart {
   display: none;
@@ -11,6 +11,12 @@
   z-index: 1;
   border-radius: rem(12);
   box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
+
+  @include breakpoint-down(medium) {
+    top: 0;
+    width: 96vw;
+    left: 0;
+  }
 
   h2 {
     padding: 0 0 rem(24) rem(24);
