@@ -1,4 +1,4 @@
-@use "../util/functions.scss" as *;
+@use "../util" as *;
 
 html {
   font-size: 100%;
@@ -25,6 +25,10 @@ body {
   max-width: rem(1110);
   margin: auto;
   box-sizing: border-box;
+
+  @include breakpoint-down(medium) {
+    padding: 0 rem(36);
+  }
 }
 
 .pointer {

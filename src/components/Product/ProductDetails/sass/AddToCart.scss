@@ -1,9 +1,13 @@
-@use "../../../../util/functions.scss" as *;
+@use "../../../../util" as *;
 
 .add-to-cart {
   display: grid;
   grid-template-columns: 40% 60%;
   gap: rem(16);
+
+  @include breakpoint-down(medium) {
+    grid-template-columns: 1fr;
+  }
 
   &__quantity {
     background-color: var(--light-grayish-blue);
@@ -24,6 +28,10 @@
     border-radius: rem(6);
     box-shadow: 0 rem(40) rem(15) rem(-10) var(--primary-pale);
     position: relative;
+
+    @include breakpoint-down(medium) {
+      height: rem(54);
+    }
   }
 
   &__icon {

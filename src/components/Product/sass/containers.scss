@@ -1,10 +1,14 @@
-@use "../../../util/functions.scss" as *;
+@use "../../../util" as *;
 
 .product-container {
-  padding: rem(90) rem(48) 0 rem(48);
+  padding-top: rem(90);
   display: flex;
   flex-direction: row;
   gap: rem(124);
+
+  @include breakpoint-down(medium) {
+    gap: rem(60);
+  }
 
   &__info {
     width: 50%;

@@ -1,13 +1,16 @@
-@use "../../../util/functions.scss" as *;
+@use "../../../util" as *;
 
 .nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
   height: rem(120);
   border-bottom: 1px solid var(--grayish-blue);
+
+  @include breakpoint-down(medium) {
+    margin: 0 rem(36);
+  }
 
   &__right {
     display: flex;
@@ -17,6 +20,10 @@
     position: relative;
     width: rem(360);
     justify-content: flex-end;
+
+    @include breakpoint-down(medium) {
+      gap: rem(20);
+    }
   }
 }
 
@@ -24,6 +31,10 @@
   width: rem(52);
   aspect-ratio: 1;
   border-radius: 50%;
+
+  @include breakpoint-down(medium) {
+    width: rem(35);
+  }
 
   &:hover {
     border: 2px solid var(--primary);

@@ -24,8 +24,9 @@
 
   &__price-container {
     display: flex;
-    flex-direction: row;
-    gap: rem(20);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(10);
     align-items: center;
     margin-bottom: rem(12);
   }
@@ -35,19 +36,27 @@
     color: var(--grayish-blue);
     text-decoration: line-through;
     margin-bottom: rem(35);
+    align-self: flex-start;
   }
 }
 
-.price {
-  font-weight: 700;
-  font-size: rem(26);
-}
+.current-price {
+  display: flex;
+  flex-direction: row;
+  gap: rem(20);
+  align-self: flex-start;
 
-.discount {
-  font-size: rem(12);
-  font-weight: 700;
-  color: var(--primary);
-  background-color: var(--primary-pale);
-  padding: rem(7) rem(9);
-  border-radius: rem(6);
+  &__value {
+    font-weight: 700;
+    font-size: rem(26);
+  }
+
+  &__discount {
+    font-size: rem(12);
+    font-weight: 700;
+    color: var(--primary);
+    background-color: var(--primary-pale);
+    padding: rem(7) rem(9);
+    border-radius: rem(6);
+  }
 }

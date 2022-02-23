@@ -1,4 +1,4 @@
-@use "../../../util/functions.scss" as *;
+@use "../../../util" as *;
 
 .nav-container {
   &__left {
@@ -7,6 +7,10 @@
     align-items: center;
     gap: rem(60);
     height: 100%;
+
+    @include breakpoint-down(medium) {
+      gap: rem(12);
+    }
   }
 }
 
@@ -17,6 +21,10 @@
   justify-content: space-between;
   align-items: center;
   gap: rem(34);
+
+  @include breakpoint-down(medium) {
+    gap: rem(16);
+  }
 
   &__element {
     display: flex;
@@ -32,9 +40,28 @@
       color: var(--dark-grayish-blue);
       font-size: rem(16);
 
+      @include breakpoint-down(medium) {
+        font-size: rem(14);
+      }
+
       &:hover {
         font-weight: 700;
       }
+    }
+  }
+}
+
+.logo-container {
+  @include breakpoint-down(medium) {
+    width: rem(100);
+  }
+
+  &__logo {
+    width: rem(140);
+    height: rem(20);
+
+    @include breakpoint-down(medium) {
+      transform: scale(0.6) translateX(rem(-30));
     }
   }
 }
