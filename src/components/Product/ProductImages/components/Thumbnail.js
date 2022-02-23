@@ -3,8 +3,8 @@ import Thumb from './Thumb'
 
 const Thumbnail = ({ thumbnail, handleClick }) => {
   const classValue = thumbnail.isSelected
-    ? 'selected thumbnail'
-    : 'thumbnail'
+    ? 'thumbnails-container__element pointer selected '
+    : 'thumbnails-container__element pointer'
 
   const [isHover, setIsHover] = useState(false)
 

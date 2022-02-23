@@ -18,15 +18,15 @@ const QuantityFieldSet = ({ quantity, setQuantity }) => {
   }
 
   return (
-    <fieldset className='quantity'>
+    <fieldset className='add-to-cart__quantity'>
 
-      <Button className='change-quantity' handleClick={handleClick(false)} type='button'>
+      <Button className='change-quantity pointer' handleClick={handleClick(false)} type='button'>
         <Minus className='filter' width='12' height='4' />
       </Button>
 
       <input className='quantity-value' type='text' name='quantity' value={quantity} onChange={onChangeQuantity} />
 
-      <Button className='change-quantity' handleClick={handleClick(true)} type='button'>
+      <Button className='change-quantity pointer' handleClick={handleClick(true)} type='button'>
         <Plus width='12' height='12' />
       </Button>
 

@@ -1,0 +1,52 @@
+.lightbox {
+  position: relative;
+  z-index: 2;
+
+  &__main-image {
+    width: 550px;
+    height: 550px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -50px;
+    right: -20px;
+
+    path {
+      &:hover,
+      &:focus {
+        fill: var(--primary);
+      }
+    }
+  }
+
+  &__arrow {
+    display: grid;
+    place-content: center;
+    position: absolute;
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    top: 275px;
+
+    svg path {
+      &:hover,
+      &:focus {
+        stroke: var(--primary);
+      }
+    }
+  }
+}
+
+.prev {
+  left: -25px;
+
+  svg {
+    margin-right: 2px;
+  }
+}
+
+.next {
+  right: -25px;
+}

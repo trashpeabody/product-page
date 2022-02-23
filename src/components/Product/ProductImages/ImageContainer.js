@@ -4,7 +4,7 @@ import MainImages from './components/MainImages'
 
 const ImageContainer = ({ isLightBox }) => {
   const classValue = isLightBox
-    ? 'product_container__lightbox'
+    ? 'product-container__lightbox'
     : 'product-container__image'
   return (
     <div className={classValue}>

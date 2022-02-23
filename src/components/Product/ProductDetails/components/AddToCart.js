@@ -40,8 +40,8 @@ const AddToCart = () => {
   return (
     <form className='add-to-cart' onSubmit={handleSubmit}>
       <QuantityFieldSet quantity={quantity} setQuantity={setQuantity} />
-      <Button className='add' type='submit'>
-        <Cart className='cart-white' width='22' height='20' viewBox='0 0 25 25' />
+      <Button className='add-to-cart__add pointer' type='submit'>
+        <Cart className='add-to-cart__icon' width='22' height='20' viewBox='0 0 25 25' />
         Add to cart
       </Button>
     </form>

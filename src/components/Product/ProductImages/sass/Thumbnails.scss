@@ -1,0 +1,52 @@
+.thumbnails-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 32px;
+  align-items: center;
+
+  &__element {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
+.lightbox {
+  .thumbnails-container {
+    &__element {
+      width: 110px;
+      height: 110px;
+    }
+  }
+}
+
+.selected {
+  border: 3px solid var(--primary);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 /50%);
+    z-index: 0;
+  }
+}
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+  }
+}

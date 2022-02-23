@@ -33,7 +33,7 @@ export const handleNav = (isPrev, thumbnails, setThumbnails, setImage) => {
 }
 
 export const handleMainClick = () => {
-  const lightbox = document.querySelector('.lightbox')
+  const lightbox = document.querySelector('.product-container__lightbox')
   lightbox.style.display = 'flex'
 }
 
@@ -58,6 +58,6 @@ export const handleHoverOut = (isPrev) => {
 }
 
 export const handleCloseClick = () => {
-  const lightbox = document.querySelector('.lightbox')
+  const lightbox = document.querySelector('.product-container__lightbox')
   lightbox.style.display = 'none'
 }

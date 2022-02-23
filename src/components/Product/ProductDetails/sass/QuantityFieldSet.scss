@@ -1,18 +1,9 @@
-.quantity {
-  background-color: var(--light-grayish-blue);
-  height: 54px;
-  border-radius: 5px;
-  display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-}
-
 .change-quantity {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
   border: none;
-  cursor: pointer;
   color: var(--primary);
   font-weight: 700;
   font-size: 20px;

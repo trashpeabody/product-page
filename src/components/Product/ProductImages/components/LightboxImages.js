@@ -10,12 +10,12 @@ const LightboxImages = () => {
   const { thumbnails, setThumbnails, image, setImage } = useContext(Context)
 
   return (
-    <div className='product-container__lightbox'>
-      <img id='main-image-lightbox' className='main-image' src={image} onClick={handleMainClick} alt='Product main image' />
-      <Close className='close' onClick={handleCloseClick} width='30' height='30' viewBox='0 0 15 15' />
+    <div className='lightbox'>
+      <img className='lightbox__main-image' src={image} onClick={handleMainClick} alt='Product main image' />
+      <Close className='lightbox__close pointer' onClick={handleCloseClick} width='30' height='30' viewBox='0 0 15 15' />
 
       <span
-        className='arrow prev'
+        className='lightbox__arrow prev pointer'
         onMouseEnter={handleHoverIn(true)}
         onMouseLeave={handleHoverOut(true)}
         onClick={handleNav(true, thumbnails, setThumbnails, setImage)}
@@ -24,14 +24,14 @@ const LightboxImages = () => {
       </span>
 
       <span
-        className='arrow next'
+        className='lightbox__arrow next pointer'
         onMouseEnter={handleHoverIn(false)}
         onMouseLeave={handleHoverOut(false)}
-        onClick={handleNav(true, thumbnails, setThumbnails, setImage)}
+        onClick={handleNav(false, thumbnails, setThumbnails, setImage)}
       >
         <Next width='13' height='18' />
       </span>
-      <ThumbnailContainer thumbnails={thumbnails} />
+      <ThumbnailContainer thumbnails={thumbnails} setThumbnails={setThumbnails} setImage={setImage} />
     </div>
   )
 }
