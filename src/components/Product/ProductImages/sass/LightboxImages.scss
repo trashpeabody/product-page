@@ -1,16 +1,18 @@
+@use "../../../../util/functions.scss" as *;
+
 .lightbox {
   position: relative;
   z-index: 2;
 
   &__main-image {
-    width: 550px;
-    height: 550px;
+    width: rem(550);
+    aspect-ratio: 1;
   }
 
   &__close {
     position: absolute;
-    top: -50px;
-    right: -20px;
+    top: rem(-50);
+    right: rem(-20);
 
     path {
       &:hover,
@@ -26,9 +28,9 @@
     position: absolute;
     background-color: var(--white);
     border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    top: 275px;
+    width: rem(56);
+    aspect-ratio: 1;
+    top: rem(275);
 
     svg path {
       &:hover,
@@ -40,7 +42,7 @@
 }
 
 .prev {
-  left: -25px;
+  left: rem(-25);
 
   svg {
     margin-right: 2px;
@@ -48,5 +50,5 @@
 }
 
 .next {
-  right: -25px;
+  right: rem(-25);
 }

@@ -1,14 +1,16 @@
+@use "../../../../util/functions.scss" as *;
+
 .thumbnails-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 32px;
+  padding-top: rem(32);
   align-items: center;
 
   &__element {
-    width: 90px;
-    height: 90px;
-    border-radius: 12px;
+    width: rem(90);
+    aspect-ratio: 1;
+    border-radius: rem(12);
     overflow: hidden;
   }
 }
@@ -16,8 +18,8 @@
 .lightbox {
   .thumbnails-container {
     &__element {
-      width: 110px;
-      height: 110px;
+      width: rem(110);
+      aspect-ratio: 1;
     }
   }
 }

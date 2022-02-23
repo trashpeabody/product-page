@@ -1,26 +1,28 @@
+@use "../../../util/functions.scss" as *;
+
 .nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  height: 120px;
+  height: rem(120);
   border-bottom: 1px solid var(--grayish-blue);
 
   &__right {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 45px;
+    gap: rem(45);
     position: relative;
-    width: 360px;
+    width: rem(360);
     justify-content: flex-end;
   }
 }
 
 .avatar {
-  width: 52px;
-  height: 52px;
+  width: rem(52);
+  aspect-ratio: 1;
   border-radius: 50%;
 
   &:hover {

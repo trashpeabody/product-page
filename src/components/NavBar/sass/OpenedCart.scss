@@ -1,29 +1,31 @@
+@use "../../../util/functions.scss" as *;
+
 .opened-cart {
   display: none;
   position: absolute;
   width: 100%;
   height: auto;
-  top: 80px;
-  padding: 28px 0;
+  top: rem(80);
+  padding: rem(28) 0;
   background-color: var(--white);
   z-index: 1;
-  border-radius: 12px;
-  box-shadow: 0 11px 40px -10px var(--dark-grayish-blue);
+  border-radius: rem(12);
+  box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
 
   h2 {
-    padding: 0 0 24px 24px;
+    padding: 0 0 rem(24) rem(24);
   }
 
   &__items-container {
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--grayish-blue);
-    padding: 0 24px;
+    padding: 0 rem(24);
   }
 }
 
 .empty {
-  min-height: 188px;
+  min-height: rem(188);
   display: grid;
   place-content: center;
   font-weight: 700;
@@ -33,9 +35,9 @@
   background-color: var(--primary);
   color: var(--white);
   width: 100%;
-  border-radius: 12px;
-  margin-top: 24px;
-  padding: 22px 0;
+  border-radius: rem(12);
+  margin-top: rem(24);
+  padding: rem(22) 0;
   text-align: center;
   font-weight: 700;
 }

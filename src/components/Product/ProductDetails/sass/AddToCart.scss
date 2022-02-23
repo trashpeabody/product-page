@@ -1,14 +1,16 @@
+@use "../../../../util/functions.scss" as *;
+
 .add-to-cart {
   display: grid;
   grid-template-columns: 40% 60%;
-  gap: 16px;
+  gap: rem(16);
 
   &__quantity {
     background-color: var(--light-grayish-blue);
-    height: 54px;
-    border-radius: 5px;
+    height: rem(54);
+    border-radius: rem(5);
     display: grid;
-    grid-template-columns: 1fr 50px 1fr;
+    grid-template-columns: 1fr rem(50) 1fr;
   }
 
   &__add {
@@ -18,14 +20,14 @@
     background-color: var(--primary);
     color: var(--white);
     border: none;
-    font-size: 16px;
-    border-radius: 6px;
-    box-shadow: 0 40px 15px -10px var(--primary-pale);
+    font-size: rem(16);
+    border-radius: rem(6);
+    box-shadow: 0 rem(40) rem(15) rem(-10) var(--primary-pale);
     position: relative;
   }
 
   &__icon {
-    padding-right: 5px;
+    padding-right: rem(5);
 
     path {
       fill: white;

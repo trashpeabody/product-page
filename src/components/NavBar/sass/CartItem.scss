@@ -1,14 +1,16 @@
+@use "../../../util/functions.scss" as *;
+
 .cart-item {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
+  padding-top: rem(24);
 
   &__thumb {
-    width: 50px;
-    height: 50px;
-    border-radius: 6px;
+    width: rem(50);
+    aspect-ratio: 1;
+    border-radius: 6;
   }
 
   p {
@@ -16,13 +18,13 @@
     color: var(--dark-grayish-blue);
 
     &:first-child {
-      padding-bottom: 8px;
+      padding-bottom: rem(8);
     }
 
     span {
       font-weight: 700;
       color: var(--very-dark-blue);
-      padding-left: 12px;
+      padding-left: rem(12);
     }
   }
 }
