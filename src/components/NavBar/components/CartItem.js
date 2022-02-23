@@ -14,12 +14,12 @@ const CartItem = ({ product }) => {
   }
   return (
     <div className='cart-item'>
-      <img className='cart-thumb' src={Thumb} alt='thumbnail in cart' />
-      <div className='cart-item-details'>
+      <img className='cart-item__thumb' src={Thumb} alt='thumbnail in cart' />
+      <div className='cart-item__details'>
         <p>{displayProduct.name}</p>
         <p>${displayProduct.price} x {product.quantity}<span>${displayProduct.price * product.quantity}</span></p>
       </div>
-      <TrashIcon className='trash' onClick={removeItem} />
+      <TrashIcon className='pointer' onClick={removeItem} />
     </div>
   )
 }

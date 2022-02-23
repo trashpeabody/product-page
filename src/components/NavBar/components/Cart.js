@@ -14,11 +14,7 @@ const Cart = () => {
   }
 
   return (
-    <>
-      <div className='cart'>
-        <CartIcon width='22' height='20' onClick={handleOpenCart} />
-      </div>
-    </>
+    <CartIcon className='pointer' width='22' height='20' onClick={handleOpenCart} />
   )
 }
 

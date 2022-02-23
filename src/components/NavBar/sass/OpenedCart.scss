@@ -11,16 +11,15 @@
   box-shadow: 0 11px 40px -10px var(--dark-grayish-blue);
 
   h2 {
-    font-weight: 700;
     padding: 0 0 24px 24px;
   }
-}
 
-.cart-items-container {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--grayish-blue);
-  padding: 0 24px;
+  &__items-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--grayish-blue);
+    padding: 0 24px;
+  }
 }
 
 .empty {

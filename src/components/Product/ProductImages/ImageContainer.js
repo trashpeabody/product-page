@@ -1,11 +1,11 @@
 
-import LightboxImages from './LightboxImages'
-import MainImages from '../MainImages'
+import LightboxImages from './components/LightboxImages'
+import MainImages from './components/MainImages'
 
 const ImageContainer = ({ isLightBox }) => {
   const classValue = isLightBox
-    ? 'lightbox'
-    : 'product-image-container'
+    ? 'product_container__lightbox'
+    : 'product-container__image'
   return (
     <div className={classValue}>
       {isLightBox

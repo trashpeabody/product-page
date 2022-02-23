@@ -10,7 +10,7 @@ const LightboxImages = () => {
   const { thumbnails, setThumbnails, image, setImage } = useContext(Context)
 
   return (
-    <div className='lightbox-container'>
+    <div className='product-container__lightbox'>
       <img id='main-image-lightbox' className='main-image' src={image} onClick={handleMainClick} alt='Product main image' />
       <Close className='close' onClick={handleCloseClick} width='30' height='30' viewBox='0 0 15 15' />
 

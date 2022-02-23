@@ -9,11 +9,11 @@ const OpenedCart = () => {
 
       <h2>Cart</h2>
       {products.length === 0
-        ? <div className='cart-items-container empty'>
+        ? <div className='opened-cart__items-container empty'>
           <p>Your cart is empty.</p>
           {/* eslint-disable-next-line react/jsx-closing-tag-location */}
         </div>
-        : <div className='cart-items-container'>
+        : <div className='opened-cart__items-container'>
           {products.map(product =>
             <CartItem key={product.index} product={product} />
           )}
