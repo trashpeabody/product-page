@@ -13,8 +13,8 @@ const NavBar = () => {
         <a href='/' target='_blank'>
           <img className='avatar' src={Avatar} alt='profile picture' />
         </a>
-        <OpenedCart />
       </div>
+      <OpenedCart />
     </nav>
   )
 }

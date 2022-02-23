@@ -4,6 +4,10 @@
   position: relative;
   z-index: 2;
 
+  @include breakpoint-down(small) {
+    z-index: 0;
+  }
+
   &__main-image {
     width: rem(550);
     aspect-ratio: 1;

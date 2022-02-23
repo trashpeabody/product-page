@@ -3,9 +3,10 @@
 .opened-cart {
   display: none;
   position: absolute;
-  width: 100%;
+  width: rem(400);
   height: auto;
-  top: rem(80);
+  top: rem(105);
+  right: rem(150);
   padding: rem(28) 0;
   background-color: var(--white);
   z-index: 1;
@@ -16,6 +17,12 @@
     top: 0;
     width: 96vw;
     left: 0;
+  }
+
+  @include breakpoint-down(small) {
+    top: rem(130);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   h2 {
