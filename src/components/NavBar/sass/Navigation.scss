@@ -14,6 +14,19 @@
   }
 }
 
+.nav-links-container {
+  @include breakpoint-down(small) {
+    display: none;
+    position: absolute;
+    width: 50vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: white;
+  }
+}
+
 .nav-links {
   display: flex;
   height: 100%;
@@ -27,13 +40,21 @@
   }
 
   @include breakpoint-down(small) {
-    display: none;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: rem(60) 0 0 rem(25);
   }
 
   &__element {
     display: flex;
     align-items: center;
     height: 100%;
+
+    @include breakpoint-down(small) {
+      height: auto;
+      padding: rem(5) 0;
+    }
 
     &:hover {
       border-bottom: 4px solid var(--primary);
@@ -48,6 +69,11 @@
         font-size: rem(14);
       }
 
+      @include breakpoint-down(small) {
+        font-weight: 700;
+        color: var(--very-dark-blue);
+      }
+
       &:hover {
         font-weight: 700;
       }
@@ -55,9 +81,47 @@
   }
 }
 
+.hamburger-menu {
+  display: none;
+  z-index: 2;
+
+  @include breakpoint-down(small) {
+    display: block;
+  }
+
+  &__bar {
+    display: block;
+    background-color: var(--dark-grayish-blue);
+    height: 3px;
+    width: 16px;
+    transition: 0.5s;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.hamburger-menu.close span {
+  &:nth-child(1) {
+    transform: translateY(6px) rotate(135deg);
+  }
+  &:nth-child(2) {
+    transform: scale(0);
+  }
+  &:nth-child(3) {
+    transform: translateY(-6px) rotate(-135deg);
+  }
+}
+
 .logo-container {
   @include breakpoint-down(medium) {
     width: rem(100);
+  }
+
+  @include breakpoint-down(small) {
+    margin-left: rem(40);
   }
 
   &__logo {
