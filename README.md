@@ -28,6 +28,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
+- Sass (BEM)
 - Webpack
 
 ### Continued development
@@ -36,6 +37,7 @@ Some extra functionality has been added (and it's going to be added in the futur
 
 ## Future Steps
 
-Add style components or sass for the style.
+Add mobile responsive version
+Add GraphQL server for accessing a list of products (and maybe a database)
 Add persistency to the cart.
-Add some more products and a product list page
+Add product list page
