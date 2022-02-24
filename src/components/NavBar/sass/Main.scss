@@ -12,6 +12,10 @@
     margin: 0 rem(36);
   }
 
+  @include breakpoint-down(small) {
+    height: rem(68);
+  }
+
   &__right {
     display: flex;
     flex-direction: row;

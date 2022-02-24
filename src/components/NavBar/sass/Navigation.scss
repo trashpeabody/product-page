@@ -26,6 +26,10 @@
     gap: rem(16);
   }
 
+  @include breakpoint-down(small) {
+    display: none;
+  }
+
   &__element {
     display: flex;
     align-items: center;
@@ -62,6 +66,10 @@
 
     @include breakpoint-down(medium) {
       transform: scale(0.6) translateX(rem(-30));
+    }
+
+    @include breakpoint-down(small) {
+      transform: scale(1) translateX(rem(-30));
     }
   }
 }
