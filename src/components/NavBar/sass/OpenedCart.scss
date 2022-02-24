@@ -6,7 +6,7 @@
   width: rem(400);
   height: auto;
   top: rem(105);
-  right: rem(150);
+  left: 60%;
   padding: rem(28) 0;
   background-color: var(--white);
   z-index: 1;
@@ -14,13 +14,13 @@
   box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
 
   @include breakpoint-down(medium) {
-    top: 0;
-    width: 96vw;
-    left: 0;
+    right: rem(50);
   }
 
   @include breakpoint-down(small) {
-    top: rem(130);
+    top: rem(90);
+    width: 93vw;
+    max-width: rem(420);
     left: 50%;
     transform: translateX(-50%);
   }
