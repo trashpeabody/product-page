@@ -20,6 +20,7 @@
   width: 100%;
   height: auto;
   transition: 0.3s;
+  object-fit: cover;
 
   @include breakpoint-down(small) {
     max-height: 50vh;
