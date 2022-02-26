@@ -1,24 +1,28 @@
+export const doNavigation = (isPrev, thumbnails, setThumbnails) => {
+  let index = thumbnails.findIndex((thumb) => thumb.isSelected === true)
+  isPrev
+    ? index === 0
+        ? index = thumbnails.length - 1
+        : index = index - 1
+    : index === 3
+      ? index = 0
+      : index = index + 1
+  for (const image of document.getElementsByClassName('main-image')) {
+    const translation = 100 * index
+    image.style.transform = `translateX(-${translation}%)`
+  }
+  setThumbnails(
+    thumbnails.map(
+      thumb => thumb.index === index
+        ? { ...thumb, isSelected: true }
+        : { ...thumb, isSelected: false }
+    )
+  )
+}
+
 export const handleNav = (isPrev, thumbnails, setThumbnails) => {
   return () => {
-    let index = thumbnails.findIndex((thumb) => thumb.isSelected === true)
-    isPrev
-      ? index === 0
-          ? index = thumbnails.length - 1
-          : index = index - 1
-      : index === 3
-        ? index = 0
-        : index = index + 1
-    for (const image of document.getElementsByClassName('main-image')) {
-      const translation = 100 * index
-      image.style.transform = `translateX(-${translation}%)`
-    }
-    setThumbnails(
-      thumbnails.map(
-        thumb => thumb.index === index
-          ? { ...thumb, isSelected: true }
-          : { ...thumb, isSelected: false }
-      )
-    )
+    doNavigation(isPrev, thumbnails, setThumbnails)
   }
 }
 
