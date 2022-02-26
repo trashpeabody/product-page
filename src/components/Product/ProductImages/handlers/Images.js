@@ -1,16 +1,3 @@
-export const handleClick = (thumbnails, setThumbnails, setImage, index) => {
-  return () => {
-    setThumbnails(
-      thumbnails.map(
-        thumb => thumb.index === index
-          ? { ...thumb, isSelected: true }
-          : { ...thumb, isSelected: false }
-      )
-    )
-    setImage(thumbnails[index].mainSrc)
-  }
-}
-
 export const handleNav = (isPrev, thumbnails, setThumbnails, setImage) => {
   return () => {
     let index = thumbnails.findIndex((thumb) => thumb.isSelected === true)
@@ -30,11 +17,6 @@ export const handleNav = (isPrev, thumbnails, setThumbnails, setImage) => {
     )
     setImage(thumbnails[index].mainSrc)
   }
-}
-
-export const handleMainClick = () => {
-  const lightbox = document.querySelector('.product-container__lightbox')
-  lightbox.style.display = 'flex'
 }
 
 export const handleHoverIn = (isPrev) => {
