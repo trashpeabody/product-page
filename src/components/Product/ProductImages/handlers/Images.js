@@ -1,4 +1,4 @@
-export const handleNav = (isPrev, thumbnails, setThumbnails, setImage) => {
+export const handleNav = (isPrev, thumbnails, setThumbnails) => {
   return () => {
     let index = thumbnails.findIndex((thumb) => thumb.isSelected === true)
     isPrev
@@ -8,6 +8,10 @@ export const handleNav = (isPrev, thumbnails, setThumbnails, setImage) => {
       : index === 3
         ? index = 0
         : index = index + 1
+    for (const image of document.getElementsByClassName('main-image')) {
+      const translation = 100 * index
+      image.style.transform = `translateX(-${translation}%)`
+    }
     setThumbnails(
       thumbnails.map(
         thumb => thumb.index === index
@@ -15,7 +19,6 @@ export const handleNav = (isPrev, thumbnails, setThumbnails, setImage) => {
           : { ...thumb, isSelected: false }
       )
     )
-    setImage(thumbnails[index].mainSrc)
   }
 }
 
