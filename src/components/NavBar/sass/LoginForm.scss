@@ -1,0 +1,44 @@
+@use "../../../util" as *;
+
+.login {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: rem(400);
+  height: auto;
+  top: rem(105);
+  left: 60%;
+  padding: rem(16) rem(32) rem(28);
+  background-color: var(--white);
+  z-index: 1;
+  border-radius: rem(12);
+  box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
+
+  &__label {
+    padding: rem(16) 0;
+    font-weight: 700;
+
+    &:nth-child(3) {
+      margin-top: rem(8);
+    }
+  }
+
+  &__input {
+    padding: rem(12) rem(12);
+    border: 1px solid var(--dark-grayish-blue);
+    border-radius: 12px;
+
+    &::placeholder {
+      color: var(--grayish-blue);
+    }
+  }
+
+  &__button {
+    background-color: var(--primary);
+    color: var(--white);
+    margin-top: rem(24);
+    padding: rem(16) 0;
+    border-radius: 6px;
+    text-align: center;
+  }
+}
