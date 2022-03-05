@@ -15,6 +15,7 @@
 }
 
 .nav-links-container {
+  height: 100%;
   @include breakpoint-down(small) {
     display: none;
     position: absolute;

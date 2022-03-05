@@ -20,7 +20,6 @@ const AddToCart = () => {
     } else {
       setProducts(products.concat(newProduct))
     }
-    document.querySelector('.opened-cart').style.display = 'block'
     setCartOpened(true)
   }
 
