@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom'
 import App from './App'
 import './style.scss'
-import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink, gql } from '@apollo/client'
+import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client'
+import { BrowserRouter } from 'react-router-dom'
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -10,24 +11,11 @@ const client = new ApolloClient({
   })
 })
 
-const query = gql`
-  query {
-    allProducts {
-      name
-      description
-      price {
-        basePrice
-        hasDiscount
-        discount
-      }
-      id
-    }
-  }
-`
-
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('root')
 )

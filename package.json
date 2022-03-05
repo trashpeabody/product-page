@@ -28,6 +28,7 @@
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.5.0",
+    "react-router-dom": "^6.2.2",
     "sass": "^1.49.8",
     "sass-loader": "^12.6.0",
     "standard": "^16.0.4",

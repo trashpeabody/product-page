@@ -8,29 +8,30 @@
   height: auto;
   top: rem(105);
   left: 60%;
-  padding: rem(16) rem(32) rem(28);
+  padding: rem(28) rem(32) rem(28);
   background-color: var(--white);
   z-index: 1;
   border-radius: rem(12);
   box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
-
-  &__label {
-    padding: rem(16) 0;
-    font-weight: 700;
-
-    &:nth-child(3) {
-      margin-top: rem(8);
-    }
-  }
 
   &__input {
     padding: rem(12) rem(12);
     border: 1px solid var(--dark-grayish-blue);
     border-radius: 12px;
 
+    &:nth-child(1) {
+      margin-bottom: rem(28);
+    }
+
     &::placeholder {
       color: var(--grayish-blue);
     }
+  }
+
+  &__button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(16);
   }
 
   &__button {
