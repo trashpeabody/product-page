@@ -10,6 +10,10 @@ const LoginForm = ({ isOpened }) => {
     event.preventDefault()
   }
 
+  const handleSignUp = () => {
+
+  }
+
   //   const query = gql`
   //   query {
   //     allProducts {
@@ -46,7 +50,7 @@ const LoginForm = ({ isOpened }) => {
           />
           <div className='login__button-container'>
             <button className='login__button pointer' type='submit'> Login </button>
-            <button className='login__button pointer' type='button'> Create account </button>
+            <Link to='/signup' onClick={handleSignUp} className='login__button pointer' type='button'> Create account </Link>
           </div>
         </form>
       : <></>

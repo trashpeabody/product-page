@@ -1,12 +1,18 @@
 {
-  "name": "fem-product-page-react",
+  "name": "ecommerce-project",
+  "private": true,
   "version": "1.0.0",
   "description": "",
+  "workspaces": [
+    "api",
+    "app"
+  ],
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "webpack serve  --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build --workspace=app",
+    "dev:app": "npm run dev --workspace=app",
+    "dev:api": "npm run dev --workspace=api",
+    "dev": "npm run dev:app & npm run dev:api"
   },
   "repository": {
     "type": "git",
@@ -20,42 +26,12 @@
   },
   "homepage": "https://github.com/trashpeabody/product-page#readme",
   "devDependencies": {
-    "@babel/core": "^7.17.4",
-    "@babel/preset-react": "^7.16.7",
-    "@svgr/webpack": "^6.2.1",
-    "babel-loader": "^8.2.3",
-    "css-loader": "^6.6.0",
-    "favicons": "^6.2.2",
-    "favicons-webpack-plugin": "^5.0.2",
-    "html-webpack-plugin": "^5.5.0",
-    "react-router-dom": "^6.2.2",
-    "sass": "^1.49.8",
-    "sass-loader": "^12.6.0",
-    "standard": "^16.0.4",
-    "style-loader": "^3.3.1",
-    "stylelint": "^14.5.1",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0",
-    "webpack": "^5.69.1",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
-  },
-  "dependencies": {
-    "-": "^0.0.1",
-    "@apollo/client": "^3.5.10",
-    "graphql": "^16.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-swipeable": "^6.2.0"
-  },
-  "standard": {
-    "ignore": [
-      "/build/**"
-    ]
+    "standard": "^16.0.4"
   },
   "eslintConfig": {
     "extends": [
       "./node_modules/standard/eslintrc.json"
     ]
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

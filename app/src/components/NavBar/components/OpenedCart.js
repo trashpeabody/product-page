@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-indent */
-import Context from '../../../context/CartContext'
+import Context from '../../../context/NavBarContext'
 import { useContext } from 'react'
 import CartItem from './CartItem'
 

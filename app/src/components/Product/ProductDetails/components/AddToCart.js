@@ -2,11 +2,11 @@ import { useState, useContext } from 'react'
 import Button from './Button'
 import Cart from '../../../../assets/icon-cart.svg'
 import QuantityFieldSet from './QuantityFieldSet'
-import CartContext from '../../../../context/CartContext'
+import Context from '../../../../context/NavBarContext'
 
 const AddToCart = () => {
   const [quantity, setQuantity] = useState(1)
-  const { products, setProducts, setCartOpened } = useContext(CartContext)
+  const { products, setProducts, setCartOpened } = useContext(Context)
 
   const addProduct = (newProduct) => {
     const index = products.findIndex((product) => product.index === newProduct.index)

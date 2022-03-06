@@ -1,6 +1,6 @@
 import TrashIcon from '../assets/icon-delete.svg'
 import Thumb from '../../Product/ProductImages/assets/image-product-1-thumbnail.jpg'
-import Context from '../../../context/CartContext'
+import Context from '../../../context/NavBarContext'
 import { useContext } from 'react'
 import { productsList } from '../../../products'
 
