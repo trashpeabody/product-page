@@ -1,6 +1,76 @@
-.signup {
+@use "../../../util/functions.scss" as *;
+
+.signup-container {
   display: grid;
-  place-items: center;
-  height: 100%;
+  margin-top: rem(120);
   width: 100%;
+  height: 100%;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  width: rem(500);
+  height: fit-content;
+  padding: rem(28) rem(32) rem(28);
+  border-radius: rem(12);
+  box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
+  color: var(--very-dark-blue);
+
+  &__textfield {
+    position: relative;
+    margin-bottom: rem(18);
+
+    & input {
+      padding: rem(12) rem(12);
+      border: 1px solid var(--dark-grayish-blue);
+      border-radius: rem(12);
+      position: relative;
+      width: 100%;
+
+      &::placeholder {
+        color: var(--grayish-blue);
+      }
+
+      &:focus,
+      &.filled {
+        border-color: var(--primary);
+        border-width: rem(2);
+      }
+    }
+
+    label {
+      position: absolute;
+      top: rem(14);
+      left: rem(10);
+      color: var(--grayish-blue);
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &.filled,
+      &.focus {
+        background-color: var(--white);
+        padding: 0 rem(2);
+        top: rem(-6);
+        left: rem(16);
+        font-size: rem(12);
+        color: var(--primary);
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__text {
+    font-size: rem(20);
+    margin-bottom: rem(30);
+    text-align: center;
+  }
+
+  &__button {
+    background-color: var(--primary);
+    color: var(--white);
+    margin-top: rem(24);
+    padding: rem(16) 0;
+    border-radius: 6px;
+    text-align: center;
+  }
 }

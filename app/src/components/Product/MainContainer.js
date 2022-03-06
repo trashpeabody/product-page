@@ -13,12 +13,14 @@ const product = {
 
 const MainContainer = () => {
   return (
-    <main className='product-container container'>
-      <ImageSrcProvider>
-        <ImageContainer isLightBox={false} />
-        <ImageContainer isLightBox />
-        <Info product={product} />
-      </ImageSrcProvider>
+    <main className='container'>
+      <div className='product-container'>
+        <ImageSrcProvider>
+          <ImageContainer isLightBox={false} />
+          <ImageContainer isLightBox />
+          <Info product={product} />
+        </ImageSrcProvider>
+      </div>
     </main>
   )
 }

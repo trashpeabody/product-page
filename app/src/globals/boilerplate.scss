@@ -4,6 +4,7 @@ html {
   font-size: 100%;
   font-family: var(--font-body);
   box-sizing: border-box;
+  height: 100%;
 }
 
 *,
@@ -19,6 +20,17 @@ body {
   color: var(--very-dark-blue);
   font-size: var(--par);
   font-weight: 400;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  height: 100%;
 }
 
 .container {
