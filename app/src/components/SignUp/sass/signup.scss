@@ -17,6 +17,10 @@
   box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
   color: var(--very-dark-blue);
 
+  &__profile-image {
+    background-image: url("./components/SignUp/assets/user.png");
+  }
+
   &__textfield {
     position: relative;
     margin-bottom: rem(18);

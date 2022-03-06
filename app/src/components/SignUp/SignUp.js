@@ -58,11 +58,16 @@ const SignUp = () => {
     setPassword('')
   }
 
+  const onFileAdded = () => {
+    console.log('added')
+  }
+
   return (
     <main className='container'>
       <div className='signup-container'>
         <form className='signup' onSubmit={handleSubmit}>
           <h1 className='signup__text'>Create your Sneakers account</h1>
+          <input className='signup__profile-image' type='file' onChange={onFileAdded} />
           <div className='signup__textfield'>
             <input
               className='user-input'
