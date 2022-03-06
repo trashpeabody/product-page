@@ -18,7 +18,9 @@ const SignUp = () => {
   }
 `
 
-  const [createUser] = useMutation(ADD_USER)
+  const [createUser] = useMutation(ADD_USER, {
+    onCompleted: (data) => console.log(data)
+  })
 
   const updateClasses = (target) => {
     if (target.value === '') {
