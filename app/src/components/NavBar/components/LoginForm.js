@@ -1,33 +1,21 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Context from '../../../context/NavBarContext'
 
 /* eslint-disable react/jsx-indent */
 const LoginForm = ({ isOpened }) => {
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
 
+  const { profileOpened, setProfileOpened } = useContext(Context)
+
   const handleSubmit = (event) => {
     event.preventDefault()
   }
 
   const handleSignUp = () => {
-
+    setProfileOpened(!profileOpened)
   }
-
-  //   const query = gql`
-  //   query {
-  //     allProducts {
-  //       name
-  //       description
-  //       price {
-  //         basePrice
-  //         hasDiscount
-  //         discount
-  //       }
-  //       id
-  //     }
-  //   }
-  // `
 
   return (
     isOpened

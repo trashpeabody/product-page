@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import CartIcon from '../../../assets/icon-cart.svg'
 import Context from '../../../context/NavBarContext'
 import Avatar from '../assets/image-avatar.png'
@@ -6,15 +6,14 @@ import OpenedCart from './OpenedCart'
 import LoginForm from './LoginForm'
 
 const CartAndProfile = () => {
-  const { cartOpened, setCartOpened } = useContext(Context)
-  const [isProfileOpened, setIsProfileOpened] = useState(false)
+  const { cartOpened, setCartOpened, profileOpened, setProfileOpened } = useContext(Context)
 
   const handleOpenCart = () => {
     setCartOpened(!cartOpened)
   }
 
   const handleOpenProfile = () => {
-    setIsProfileOpened(!isProfileOpened)
+    setProfileOpened(!profileOpened)
   }
 
   return (
@@ -24,7 +23,7 @@ const CartAndProfile = () => {
         <img onClick={handleOpenProfile} className='avatar pointer' src={Avatar} alt='profile picture' />
       </div>
       <OpenedCart isOpened={cartOpened} />
-      <LoginForm isOpened={isProfileOpened} />
+      <LoginForm isOpened={profileOpened} />
     </>
 
   )
