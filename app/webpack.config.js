@@ -64,7 +64,8 @@ module.exports = (env, argv) => {
       new FaviconsWebpackPlugin('src/assets/favicon-32x32.png')
     ],
     devServer: {
-      open: true
+      open: true,
+      historyApiFallback: true
     }
   }
 }

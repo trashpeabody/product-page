@@ -1,12 +1,12 @@
 import { useContext, useState } from 'react'
 import CartIcon from '../../../assets/icon-cart.svg'
-import CartContext from '../../../context/CartContext'
+import Context from '../../../context/NavBarContext'
 import Avatar from '../assets/image-avatar.png'
 import OpenedCart from './OpenedCart'
 import LoginForm from './LoginForm'
 
 const CartAndProfile = () => {
-  const { cartOpened, setCartOpened } = useContext(CartContext)
+  const { cartOpened, setCartOpened } = useContext(Context)
   const [isProfileOpened, setIsProfileOpened] = useState(false)
 
   const handleOpenCart = () => {
