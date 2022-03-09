@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Logo from '../assets/logo.svg'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
   const [open, setOpen] = useState(false)
@@ -25,16 +26,16 @@ const Navigation = () => {
         <span className='hamburger-menu__bar' />
         <span className='hamburger-menu__bar' />
       </div>
-      <a className='logo-container' href='/' target='_blank'>
+      <Link to='/' className='logo-container'>
         <Logo className='logo-container__logo' />
-      </a>
+      </Link>
       <div className='nav-links-container'>
         <ul className='nav-links'>
-          <li className='nav-links__element'><a href='/' target='_blank'>Collections</a></li>
-          <li className='nav-links__element'><a href='/' target='_blank'>Men</a></li>
-          <li className='nav-links__element'><a href='/' target='_blank'>Women</a></li>
-          <li className='nav-links__element'><a href='/' target='_blank'>About</a></li>
-          <li className='nav-links__element'><a href='/' target='_blank'>Contact</a></li>
+          <li className='nav-links__element'><a href='/'>Collections</a></li>
+          <li className='nav-links__element'><a href='/'>Men</a></li>
+          <li className='nav-links__element'><a href='/'>Women</a></li>
+          <li className='nav-links__element'><a href='/'>About</a></li>
+          <li className='nav-links__element'><a href='/'>Contact</a></li>
         </ul>
       </div>
     </div>

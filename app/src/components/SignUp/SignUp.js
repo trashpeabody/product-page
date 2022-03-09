@@ -1,21 +1,29 @@
 import { useState } from 'react'
 import { gql, useMutation } from '@apollo/client'
+import Icon from '../../assets/user.png'
+import { UploadClient } from '@uploadcare/upload-client'
+
+const client = new UploadClient({ publicKey: 'bda0435abe123e6bc475' })
 
 const SignUp = () => {
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
+  const [image, setImage] = useState(Icon)
+  const [file, setFile] = useState('')
 
   const ADD_USER = gql`
-  mutation createUser($name: String!, $password: String!) {
-    addUser(
-      name: $name, 
-      password: $password
-    ) {
-      name
-      password
-      id
+    mutation createUser($name: String!, $password: String!, $url: String) {
+      addUser(
+        name: $name, 
+        password: $password,
+        url: $url
+      ) {
+        name
+        password
+        id
+        url
+      }
     }
-  }
 `
 
   const [createUser] = useMutation(ADD_USER, {
@@ -52,10 +60,20 @@ const SignUp = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(user, password)
-    createUser({ variables: { name: user, password: password } })
-    setUser('')
-    setPassword('')
+    client.uploadFile(file)
+      .then(({ cdnUrl }) => {
+        createUser({ variables: { name: user, password: password, url: cdnUrl } })
+        setUser('')
+        setPassword('')
+        setImage(Icon)
+        setFile('')
+      })
+      .catch((err) => console.error(err))
+  }
+
+  const onFileAdded = (event) => {
+    setImage(URL.createObjectURL(event.target.files[0]))
+    setFile(event.target.files[0])
   }
 
   return (
@@ -63,6 +81,10 @@ const SignUp = () => {
       <div className='signup-container'>
         <form className='signup' onSubmit={handleSubmit}>
           <h1 className='signup__text'>Create your Sneakers account</h1>
+          <label className='signup__profile-image'>
+            <input type='file' onChange={onFileAdded} />
+            <img src={image} />
+          </label>
           <div className='signup__textfield'>
             <input
               className='user-input'

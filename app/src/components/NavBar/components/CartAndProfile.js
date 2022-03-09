@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import CartIcon from '../../../assets/icon-cart.svg'
 import Context from '../../../context/NavBarContext'
-import Avatar from '../assets/image-avatar.png'
+import Avatar from '../../../assets/user.png'
 import OpenedCart from './OpenedCart'
 import LoginForm from './LoginForm'
 

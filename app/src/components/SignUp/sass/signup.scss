@@ -17,6 +17,21 @@
   box-shadow: 0 rem(11) rem(40) rem(-10) var(--dark-grayish-blue);
   color: var(--very-dark-blue);
 
+  &__profile-image {
+    width: rem(400);
+    height: rem(400);
+    border-radius: 50%;
+    margin-bottom: rem(28);
+    overflow: hidden;
+    align-self: center;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &__textfield {
     position: relative;
     margin-bottom: rem(18);
@@ -73,4 +88,8 @@
     border-radius: 6px;
     text-align: center;
   }
+}
+
+input[type="file"] {
+  display: none;
 }
