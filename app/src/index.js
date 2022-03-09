@@ -1,13 +1,12 @@
 import ReactDOM from 'react-dom'
 import App from './App'
 import './style.scss'
-import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client'
+import { createUploadLink } from 'apollo-upload-client'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: new HttpLink({
-    uri: 'http://localhost:4000'
-  })
+  link: createUploadLink({ uri: 'http://localhost:4000/graphql' })
 })
 
 ReactDOM.render(

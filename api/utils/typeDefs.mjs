@@ -1,10 +1,11 @@
 import { gql } from 'apollo-server'
 
 const globalDefs = `
+
 enum Boolean {
-  TRUE
-  FALSE
-}
+    TRUE
+    FALSE
+  }
 `
 
 const productDefs = `
@@ -27,6 +28,7 @@ const userDefs = `
     name: String!
     password : String!
     id: String!
+    url: String
   }
 `
 
@@ -36,6 +38,7 @@ const queries = `
     allProducts: [Product]!
     findProduct(name: String!): Product
     findUser(name: String!): User
+    allUsers: [User]!
   }
 `
 
@@ -44,6 +47,7 @@ const mutations = `
     addUser(
       name: String!
       password: String!
+      url: String
     ) : User
   }
 `

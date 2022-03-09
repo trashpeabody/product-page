@@ -18,7 +18,18 @@
   color: var(--very-dark-blue);
 
   &__profile-image {
-    background-image: url("./components/SignUp/assets/user.png");
+    width: rem(400);
+    height: rem(400);
+    border-radius: 50%;
+    margin-bottom: rem(28);
+    overflow: hidden;
+    align-self: center;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__textfield {
@@ -77,4 +88,8 @@
     border-radius: 6px;
     text-align: center;
   }
+}
+
+input[type="file"] {
+  display: none;
 }
