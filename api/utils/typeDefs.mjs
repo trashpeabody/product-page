@@ -29,6 +29,12 @@ const userDefs = `
     password : String!
     id: String!
     url: String
+  },
+  type LoggedUser {
+    name: String!
+    id: String!
+    url: String
+    token: String!
   }
 `
 
@@ -38,7 +44,11 @@ const queries = `
     allProducts: [Product]!
     findProduct(name: String!): Product
     findUser(name: String!): User
-    allUsers: [User]!
+    logIn(
+      name: String!
+      password: String!
+      ): LoggedUser
+    allUsers: [User]
   }
 `
 
@@ -48,7 +58,7 @@ const mutations = `
       name: String!
       password: String!
       url: String
-    ) : User
+    ) : LoggedUser
   }
 `
 

@@ -12,13 +12,18 @@ const schema = new mongoose.Schema({
     required: true,
     minlength: 8
   },
-  id: {
-    type: String,
-    required: true
-  },
   url: {
     type: String,
     required: false
+  }
+})
+
+schema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+    delete returnedObject.password
   }
 })
 

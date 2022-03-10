@@ -1,0 +1,27 @@
+Users:
+
+"userName": String!
+"password": String!
+"firstName": String!
+"lastName": String!
+"email": String!
+"addresses": [Address]
+"orders": [Order]
+
+Orders:
+"productOrdered": [ProductOrdered]!
+"address": AddressOrder!
+
+productSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})
+
+For relations:
+orders: [{
+  type: Schema.Types.ObjectId,
+  ref: 'Order'
+}]

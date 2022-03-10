@@ -3,18 +3,21 @@ import NavBar from './components/NavBar/Main'
 import Product from './components/Product/MainContainer'
 import { NavBarContextProvider } from './context/NavBarContext'
 import SignUp from './components/SignUp/SignUp'
+import { UserContextProvider } from './context/UserContext'
 
 const App = () => {
   return (
-    <NavBarContextProvider>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Product />} />
-          <Route path='signup' element={<SignUp />} />
-        </Routes>
-      </BrowserRouter>
-    </NavBarContextProvider>
+    <UserContextProvider>
+      <NavBarContextProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Product />} />
+            <Route path='signup' element={<SignUp />} />
+          </Routes>
+        </BrowserRouter>
+      </NavBarContextProvider>
+    </UserContextProvider>
   )
 }
 

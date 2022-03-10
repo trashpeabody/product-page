@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { gql, useMutation } from '@apollo/client'
 import Icon from '../../assets/user.png'
 import { UploadClient } from '@uploadcare/upload-client'
+import UserContext from '../../context/UserContext'
 
 const client = new UploadClient({ publicKey: 'bda0435abe123e6bc475' })
 
 const SignUp = () => {
-  const [user, setUser] = useState('')
+  const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [image, setImage] = useState(Icon)
   const [file, setFile] = useState('')
+  const { setUser } = useContext(UserContext)
 
   const ADD_USER = gql`
     mutation createUser($name: String!, $password: String!, $url: String) {
@@ -19,15 +21,19 @@ const SignUp = () => {
         url: $url
       ) {
         name
-        password
         id
         url
+        token
       }
     }
 `
 
   const [createUser] = useMutation(ADD_USER, {
-    onCompleted: (data) => console.log(data)
+    onCompleted: ({ addUser }) => {
+      window.localStorage.setItem(
+        'token', JSON.stringify(addUser.token))
+      setUser(addUser)
+    }
   })
 
   const updateClasses = (target) => {
@@ -41,7 +47,7 @@ const SignUp = () => {
   }
 
   const handleUserChange = ({ target }) => {
-    setUser(target.value)
+    setUserName(target.value)
     updateClasses(target)
   }
 
@@ -62,8 +68,8 @@ const SignUp = () => {
     event.preventDefault()
     client.uploadFile(file)
       .then(({ cdnUrl }) => {
-        createUser({ variables: { name: user, password: password, url: cdnUrl } })
-        setUser('')
+        createUser({ variables: { name: userName, password: password, url: cdnUrl } })
+        setUserName('')
         setPassword('')
         setImage(Icon)
         setFile('')
@@ -90,7 +96,7 @@ const SignUp = () => {
               className='user-input'
               type='text'
               name='user'
-              value={user}
+              value={userName}
               onChange={handleUserChange}
               onFocus={handleFocus}
               onBlur={handleFocusOut}
