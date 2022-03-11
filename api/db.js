@@ -1,8 +1,10 @@
 import mongoose from 'mongoose'
-import credentials from './credentials.mjs'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const connectionString = `mongodb+srv://${credentials.db.user}:${credentials.db.password}@productpage.cvkks.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const { DB_USER, DB_PASSWORD } = process.env
 
+const connectionString = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@productpage.cvkks.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true

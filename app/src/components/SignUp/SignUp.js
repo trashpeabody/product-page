@@ -4,7 +4,7 @@ import Icon from '../../assets/user.png'
 import { UploadClient } from '@uploadcare/upload-client'
 import UserContext from '../../context/UserContext'
 
-const client = new UploadClient({ publicKey: 'bda0435abe123e6bc475' })
+const client = new UploadClient({ publicKey: process.env.STORAGE_KEY })
 
 const SignUp = () => {
   const [userName, setUserName] = useState('')

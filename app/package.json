@@ -25,6 +25,7 @@
     "@svgr/webpack": "^6.2.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
+    "dotenv-webpack": "^7.1.0",
     "html-webpack-plugin": "^5.5.0",
     "react-router-dom": "^6.2.2",
     "sass": "^1.49.8",
@@ -40,11 +41,11 @@
   "dependencies": {
     "-": "^0.0.1",
     "@apollo/client": "^3.5.10",
+    "@uploadcare/upload-client": "3.0.0",
     "graphql": "^16.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-swipeable": "^6.2.0",
-    "@uploadcare/upload-client": "3.0.0"
+    "react-swipeable": "^6.2.0"
   },
   "standard": {
     "ignore": [

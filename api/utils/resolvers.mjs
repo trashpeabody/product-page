@@ -2,10 +2,13 @@ import bcrypt from 'bcrypt'
 import User from '../models/User.mjs'
 import mongoose from 'mongoose'
 import { AuthenticationError } from 'apollo-server'
-import credentials from '../credentials.mjs'
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const products = []
+
+const { JWT_KEY } = process.env
 
 const queryResolvers = {
   productCount: () => products.length,
@@ -36,7 +39,7 @@ const queryResolvers = {
               id: user._id,
               username: user.password
             }
-            const token = jwt.sign(userForToken, credentials.jwt.password)
+            const token = jwt.sign(userForToken, JWT_KEY)
             return token
           })
           .catch(err => {
@@ -74,7 +77,8 @@ const mutationResolvers = {
       id: savedUser._id.toString(),
       username: savedUser.name
     }
-    const token = jwt.sign(userForToken, credentials.jwt.key)
+    const token = jwt.sign(userForToken, JWT_KEY)
+    console.log(token)
     return { name: user.name, id: savedUser._id.toString(), url: args.url, token: token }
   }
 }
