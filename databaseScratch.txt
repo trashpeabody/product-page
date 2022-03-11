@@ -25,3 +25,5 @@ orders: [{
   type: Schema.Types.ObjectId,
   ref: 'Order'
 }]
+
+jwt.verify(token, credentials.jwt.key)
