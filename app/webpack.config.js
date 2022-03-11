@@ -45,19 +45,6 @@ const svgRules = {
   use: [{ loader: '@svgr/webpack', options: { icon: true } }]
 }
 
-const plugins = (isProduction) => {
-  return (
-    isProduction
-      ? [
-          new HtmlWebpackPlugin({ template: 'src/index.html' })
-        ]
-      : [
-          new HtmlWebpackPlugin({ template: 'src/index.html' }),
-          new Dotenv()
-        ]
-  )
-}
-
 module.exports = (env, argv) => {
   const { mode } = argv
   const isProduction = mode === 'production'
@@ -72,7 +59,10 @@ module.exports = (env, argv) => {
     module: {
       rules: [jsRules, styleRules, sassRules, imageRules, svgRules]
     },
-    plugins: plugins(isProduction),
+    plugins: [
+      new HtmlWebpackPlugin({ template: 'src/index.html' }),
+      new Dotenv({ systemvars: true })
+    ],
     devServer: {
       open: true,
       historyApiFallback: true
