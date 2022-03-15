@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon index.js",
-    "start": "NODE_ENV=production node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "start:test": "cross-env NODE_ENV=test node src/index.js",
+    "test": "cross-env NODE_ENV=test PORT=1234 jest --verbose",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
   "author": "Jorge <bodybluebloody@gmail.com>",
@@ -21,6 +22,10 @@
     "dotenv": "^16.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "@types/jest": "27.4.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
