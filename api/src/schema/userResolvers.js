@@ -62,7 +62,6 @@ const addUser = async (root, args) => {
       username: savedUser.name
     }
     const token = jwt.sign(userForToken, JWT_KEY)
-    console.log(token)
     return { name: user.name, id: savedUser._id.toString(), url: args.url, token: token }
   } catch {
     return new UserInputError('Value provided is not correct or complete')

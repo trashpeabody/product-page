@@ -1,6 +1,5 @@
 const { initialUsers } = require('./helpers')
 const { findUser, allUsers, addUser } = require('../schema/userResolvers')
-const { UserInputError } = require('apollo-server')
 const User = require('../models/User')
 const mongoose = require('mongoose')
 require('../db')
