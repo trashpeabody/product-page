@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import Button from './Button'
+import { Button } from '../../../General/Button'
 import Cart from '../../../../assets/icon-cart.svg'
 import QuantityFieldSet from './QuantityFieldSet'
 import Context from '../../../../context/NavBarContext'

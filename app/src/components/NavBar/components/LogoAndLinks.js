@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import Logo from '../assets/logo.svg'
+import { cloneElement, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Navigation = () => {
+const Navigation = ({ children, links }) => {
   const [open, setOpen] = useState(false)
 
   const handleBugerClick = () => {
@@ -27,15 +26,13 @@ const Navigation = () => {
         <span className='hamburger-menu__bar' />
       </div>
       <Link to='/' className='logo-container'>
-        <Logo className='logo-container__logo' />
+        {cloneElement(children(), { className: 'logo-container__logo' })}
       </Link>
       <div className='nav-links-container'>
         <ul className='nav-links'>
-          <li className='nav-links__element'><a href='/'>Collections</a></li>
-          <li className='nav-links__element'><a href='/'>Men</a></li>
-          <li className='nav-links__element'><a href='/'>Women</a></li>
-          <li className='nav-links__element'><a href='/'>About</a></li>
-          <li className='nav-links__element'><a href='/'>Contact</a></li>
+          {links.map(link => {
+            return <li className='nav-links__element' key={link.index}><a href={`/${link.title}`}>{link.title}</a></li>
+          })}
         </ul>
       </div>
     </div>

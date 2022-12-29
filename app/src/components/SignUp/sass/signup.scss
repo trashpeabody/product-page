@@ -18,12 +18,13 @@
   color: var(--very-dark-blue);
 
   &__profile-image {
-    width: rem(400);
-    height: rem(400);
+    width: rem(200);
+    height: rem(200);
     border-radius: 50%;
     margin-bottom: rem(28);
     overflow: hidden;
     align-self: center;
+    position: relative;
 
     & img {
       width: 100%;
@@ -60,6 +61,7 @@
       left: rem(10);
       color: var(--grayish-blue);
       transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
 
       &.filled,
       &.focus {

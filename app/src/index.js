@@ -3,6 +3,8 @@ import App from './App'
 import './style.scss'
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { UserContextProvider } from './context/UserContext'
+import { useEffect } from 'react'
 
 const httpLink = createHttpLink({
   uri: process.env.DB_URL
@@ -27,7 +29,9 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <UserContextProvider>
+      <App />
+    </UserContextProvider>
   </ApolloProvider>,
   document.getElementById('root')
 )

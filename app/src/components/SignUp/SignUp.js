@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react'
-import { gql, useMutation } from '@apollo/client'
+import { useState } from 'react'
 import Icon from '../../assets/user.png'
 import { UploadClient } from '@uploadcare/upload-client'
-import UserContext from '../../context/UserContext'
+import { useUser, updateClasses } from './SignUp.Helpers'
+import { useNavigate } from 'react-router-dom'
 
 const client = new UploadClient({ publicKey: process.env.STORAGE_KEY })
 
@@ -11,58 +11,8 @@ const SignUp = () => {
   const [password, setPassword] = useState('')
   const [image, setImage] = useState(Icon)
   const [file, setFile] = useState('')
-  const { setUser } = useContext(UserContext)
-
-  const ADD_USER = gql`
-    mutation createUser($name: String!, $password: String!, $url: String) {
-      addUser(
-        name: $name, 
-        password: $password,
-        url: $url
-      ) {
-        name
-        id
-        url
-        token
-      }
-    }
-`
-
-  const [createUser] = useMutation(ADD_USER, {
-    onCompleted: ({ addUser }) => {
-      window.localStorage.setItem(
-        'token', JSON.stringify(addUser.token))
-      setUser(addUser)
-    }
-  })
-
-  const updateClasses = (target) => {
-    if (target.value === '') {
-      target.classList.remove('filled')
-      target.nextElementSibling.classList.remove('filled')
-    } else {
-      target.classList.add('filled')
-      target.nextElementSibling.classList.add('filled')
-    }
-  }
-
-  const handleUserChange = ({ target }) => {
-    setUserName(target.value)
-    updateClasses(target)
-  }
-
-  const handlePasswordChange = ({ target }) => {
-    setPassword(target.value)
-    updateClasses(target)
-  }
-
-  const handleFocus = ({ target }) => {
-    target.nextElementSibling.classList.add('focus')
-  }
-
-  const handleFocusOut = ({ target }) => {
-    target.nextElementSibling.classList.remove('focus')
-  }
+  const createUser = useUser()
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -73,6 +23,7 @@ const SignUp = () => {
         setPassword('')
         setImage(Icon)
         setFile('')
+        navigate('/')
       })
       .catch((err) => console.error(err))
   }
@@ -93,26 +44,31 @@ const SignUp = () => {
           </label>
           <div className='signup__textfield'>
             <input
-              className='user-input'
               type='text'
               name='user'
               value={userName}
-              onChange={handleUserChange}
-              onFocus={handleFocus}
-              onBlur={handleFocusOut}
+              onChange={({ target }) => {
+                setUserName(target.value)
+                updateClasses(target)
+              }}
+              onFocus={({ target }) => target.nextElementSibling.classList.add('focus')}
+              onBlur={({ target }) => target.nextElementSibling.classList.remove('focus')}
+              autoComplete='off'
             />
             <label className='user-label' htmlFor='user'>Username</label>
           </div>
 
           <div className='signup__textfield'>
             <input
-              className='signup__input'
               type='password'
               name='pass'
               value={password}
-              onChange={handlePasswordChange}
-              onFocus={handleFocus}
-              onBlur={handleFocusOut}
+              onChange={({ target }) => {
+                setPassword(target.value)
+                updateClasses(target)
+              }}
+              onFocus={({ target }) => target.nextElementSibling.classList.add('focus')}
+              onBlur={({ target }) => target.nextElementSibling.classList.remove('focus')}
             />
             <label className='signup__label password-label' htmlFor='user'>Password</label>
           </div>

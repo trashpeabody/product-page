@@ -4,6 +4,7 @@ import Context from '../../../context/NavBarContext'
 import OpenedCart from './OpenedCart'
 import LoginForm from './LoginForm'
 import UserContext from '../../../context/UserContext'
+import ShowWithAnimation from '../../ShowWithAnimation'
 
 const CartAndProfile = () => {
   const { cartOpened, setCartOpened, profileOpened, setProfileOpened } = useContext(Context)
@@ -23,7 +24,9 @@ const CartAndProfile = () => {
         <CartIcon className='pointer' width='22' height='20' onClick={handleOpenCart} />
         <img onClick={handleOpenProfile} className='avatar pointer' src={user.url} alt='profile picture' />
       </div>
-      <OpenedCart isOpened={cartOpened} />
+      <ShowWithAnimation isMounted={cartOpened}>
+        <OpenedCart />
+      </ShowWithAnimation>
       <LoginForm isOpened={profileOpened} />
     </>
 
